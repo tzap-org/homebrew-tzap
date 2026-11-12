@@ -1,26 +1,26 @@
 class Tzap < Formula
   desc "Create, list, verify, and extract encrypted recoverable tzap archives"
   homepage "https://github.com/tzap-org/tzap"
-  version "0.2.7"
+  version "0.2.8"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tzap-org/tzap/releases/download/v0.2.7/tzap-v0.2.7-macos-aarch64.tar.gz"
-      sha256 "ecadcc746b588f2d12ab6ab3885e3be294d640375ff0aacbc5cfd486ece4ce64"
+      url "https://github.com/tzap-org/tzap/releases/download/v0.2.8/tzap-v0.2.8-macos-aarch64.tar.gz"
+      sha256 "ad80f8a60aef87ab3fdaaff2835fc1d27eb64a933d91ec9d08315f014dbb5f62"
     else
-      url "https://github.com/tzap-org/tzap/releases/download/v0.2.7/tzap-v0.2.7-macos-x86_64.tar.gz"
-      sha256 "d69c7734bb81655cc78833fa91bcf91a9533dc4fb4634db1587b63e5b0e9925f"
+      url "https://github.com/tzap-org/tzap/releases/download/v0.2.8/tzap-v0.2.8-macos-x86_64.tar.gz"
+      sha256 "337f63c65c26350bcf1f4019c45635335ba35f4c11810c34f5349a95a418be7b"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/tzap-org/tzap/releases/download/v0.2.7/tzap-v0.2.7-linux-x86_64-musl.tar.gz"
-      sha256 "47ef0c4d4d32d665aedb1b09d9d62415705e9a48f4974ee3c3b23613c9f40be1"
+      url "https://github.com/tzap-org/tzap/releases/download/v0.2.8/tzap-v0.2.8-linux-x86_64-musl.tar.gz"
+      sha256 "a9b7210cef525ba757ebc5103415131ea52bb31fdc08572ebc08fb7034380f70"
     else
-      url "https://github.com/tzap-org/tzap/releases/download/v0.2.7/tzap-v0.2.7-linux-aarch64-musl.tar.gz"
-      sha256 "c55124a666cb71f0e6a3cec53ca28180e97b385684122cc8cbf683958cae0b39"
+      url "https://github.com/tzap-org/tzap/releases/download/v0.2.8/tzap-v0.2.8-linux-aarch64-musl.tar.gz"
+      sha256 "ba013755a606033db0943047445a805e51c0a263076beba0c76a06ae9b6f0ea8"
     end
   end
 
@@ -29,7 +29,7 @@ class Tzap < Formula
   end
 
   test do
-    assert_match "tzap 0.2.7", shell_output("#{bin}/tzap --version")
+    assert_match "tzap 0.2.8", shell_output("#{bin}/tzap --version")
 
     (testpath/"input.txt").write "homebrew smoke payload\n"
     archive = testpath/"smoke.tzap"
